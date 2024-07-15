@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://4b8o1ua6i8nf"]
+[gd_scene load_steps=11 format=3 uid="uid://4b8o1ua6i8nf"]
 
 [ext_resource type="Texture2D" uid="uid://bulerugq7fue3" path="res://models/a0536ed55cd44362cf3de6b5ce60d701.png" id="1_crv5l"]
 [ext_resource type="PackedScene" uid="uid://bsebeprb4u6bv" path="res://player.tscn" id="2_3eh37"]
 [ext_resource type="AudioStream" uid="uid://cdmes7bui1fpc" path="res://models/10003692.ogg" id="3_ri2ss"]
-[ext_resource type="Texture2D" uid="uid://c1rh25gcyxaxg" path="res://models/Безымянный.png" id="4_bw8sg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5oon"]
 texture = ExtResource("1_crv5l")
@@ -2433,7 +2432,3 @@ layer_0/tile_data = PackedInt32Array(-19005493, 720896, 1610612749, -19071029, 7
 visible = false
 tile_set = SubResource("TileSet_vpr3m")
 format = 2
-
-[node name="Безымянный" type="Sprite2D" parent="."]
-position = Vector2(-389, 759)
-texture = ExtResource("4_bw8sg")
