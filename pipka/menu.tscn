@@ -33,7 +33,13 @@ scale = Vector2(7.65625, 1.83594)
 texture = ExtResource("3_ew0sa")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(1239, 340)
+position = Vector2(1082, 153)
+scale = Vector2(1.75781, 1.41406)
+texture = ExtResource("3_ew0sa")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(1086, 351)
+scale = Vector2(1.82813, 1.79688)
 texture = ExtResource("3_ew0sa")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
