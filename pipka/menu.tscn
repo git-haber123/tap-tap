@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvybc45gqmjr8"]
+[gd_scene load_steps=2 format=3 uid="uid://bvybc45gqmjr8"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_hrmjy"]
-[ext_resource type="Texture2D" uid="uid://d2shux6xplfkw" path="res://a0536ed55cd44362cf3de6b5ce60d701.png" id="2_53b1m"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_hrmjy")
@@ -21,10 +20,6 @@ offset_right = 563.0
 offset_bottom = 1041.0
 theme_override_font_sizes/font_size = 45
 text = "Выход блять"
-
-[node name="A0536Ed55Cd44362Cf3De6b5Ce60d701" type="Sprite2D" parent="."]
-position = Vector2(1792, 248)
-texture = ExtResource("2_53b1m")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
