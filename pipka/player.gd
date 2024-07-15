@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = $"."
-var speed = 100
+var speed = 200
 var dvizh = true
 @onready var camera = $Camera2D
 var value = 0
@@ -21,8 +21,8 @@ func _physics_process(delta):
 		dvizh = true
 		
 	if dvizh:
-		player.position.y -= speed * delta - 0.75
-		player.position.x += speed * delta + 0.80
+		player.position.y -= speed * delta - 1.5
+		player.position.x += speed * delta + 1.6
 		
 	else:
 		player.position.y -= speed * delta
