@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsebeprb4u6bv"]
+
+[ext_resource type="Texture2D" uid="uid://boau0p7uvnh0d" path="res://models/Pizda.png" id="1_8jtwa"]
+[ext_resource type="Script" path="res://player.gd" id="1_82p25"]
+[ext_resource type="Script" path="res://objectTrials.gd" id="3_qpxad"]
+[ext_resource type="Texture2D" uid="uid://bqfyyslko5efm" path="res://models/2d_lights_and_shadows_neutral_point_light.webp" id="4_nnmup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pihfe"]
+size = Vector2(58.6667, 58.6667)
+
+[sub_resource type="Curve" id="Curve_adxh3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994737, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_nolld"]
+colors = PackedColorArray(1, 0.137255, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xbrp"]
+atlas = ExtResource("1_8jtwa")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_840n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xbrp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+rotation = 0.785398
+skew = 0.436332
+script = ExtResource("1_82p25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.375, 0.375)
+shape = SubResource("RectangleShape2D_pihfe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = -1.12574
+offset = Vector2(0, -24.675)
+ignore_rotation = false
+zoom = Vector2(1.985, 1.985)
+process_callback = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="tt" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+width = 15.0
+width_curve = SubResource("Curve_adxh3")
+gradient = SubResource("Gradient_nolld")
+script = ExtResource("3_qpxad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.365, 0.365)
+sprite_frames = SubResource("SpriteFrames_840n6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.396078, 0.396078, 0.396078, 0.713726)
+texture = ExtResource("4_nnmup")
+height = 8.0

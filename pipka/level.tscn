@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://4b8o1ua6i8nf"]
+
+[ext_resource type="Texture2D" uid="uid://du78l61tufgao" path="res://models/дорогаа.png" id="1_kpabr"]
+[ext_resource type="PackedScene" uid="uid://bsebeprb4u6bv" path="res://player.tscn" id="2_3eh37"]
+[ext_resource type="AudioStream" uid="uid://cdmes7bui1fpc" path="res://models/10003692.ogg" id="3_ri2ss"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thufm"]
+texture = ExtResource("1_kpabr")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bcqsn"]
+sources/0 = SubResource("TileSetAtlasSource_thufm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii4d8"]
+texture = ExtResource("1_kpabr")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_obtol"]
+sources/0 = SubResource("TileSetAtlasSource_ii4d8")
+
+[node name="level" type="Node2D"]
+
+[node name="дорожка вправо" type="TileMap" parent="."]
+z_index = -1
+rotation = 0.785398
+scale = Vector2(1.5, 1.5)
+skew = 0.436332
+tile_set = SubResource("TileSet_bcqsn")
+format = 2
+layer_0/tile_data = PackedInt32Array(-458723, 0, 0, -393187, 0, 1, -327651, 0, 2, -458722, 65536, 0, -393186, 65536, 1, -327650, 65536, 2, -655331, 0, 0, -589795, 0, 1, -524259, 0, 2, -655330, 65536, 0, -589794, 65536, 1, -524258, 65536, 2, -851939, 0, 0, -786403, 0, 1, -720867, 0, 2, -851938, 65536, 0, -786402, 65536, 1, -720866, 65536, 2, -1048547, 0, 0, -983011, 0, 1, -917475, 0, 2, -1048546, 65536, 0, -983010, 65536, 1, -917474, 65536, 2, -1179619, 0, 0, -1114083, 0, 1, -1179618, 65536, 0, -1114082, 65536, 1, -1376230, 0, 0, -1310694, 0, 1, -1245158, 0, 2, -1310693, 65536, 1, -1245157, 65536, 2, -1376229, 65536, 0, -1507304, 0, 0, -1441768, 0, 1, -1507303, 65536, 0, -1441767, 65536, 1, -1703916, 0, 0, -1703915, 65536, 0)
+
+[node name="Дорожка влево" type="TileMap" parent="."]
+z_index = -1
+rotation = -0.349066
+scale = Vector2(1.5, 1.5)
+skew = -0.436332
+tile_set = SubResource("TileSet_obtol")
+format = 2
+layer_0/tile_data = PackedInt32Array(1769488, 0, 0, 1835024, 0, 1, 1769489, 65536, 0, 1835025, 65536, 1, 1703952, 0, 0, 1703953, 65536, 0, 1572883, 0, 1, 1638419, 0, 2, 1572884, 65536, 1, 1638420, 65536, 2, 1507351, 0, 2, 1572887, 0, 1, 1638423, 0, 2, 1507352, 65536, 2, 1572888, 65536, 1, 1638424, 65536, 2, 1376279, 0, 0, 1441815, 0, 1, 1376280, 65536, 0, 1441816, 65536, 1, 1310743, 0, 1, 1310744, 65536, 1, 1245208, 0, 0, 1245209, 65536, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_3eh37")]
+position = Vector2(648, 460)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ri2ss")
+volume_db = -16.865
+autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

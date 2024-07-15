@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqnas3oygauu"]
+
+[ext_resource type="Texture2D" uid="uid://bxoapdm4iq4wt" path="res://models/not_work.jpg" id="1_4hkl5"]
+[ext_resource type="Script" path="res://раздел в разработке.gd" id="1_hsjmb"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_hsjmb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="NotWork" type="Sprite2D" parent="."]
+position = Vector2(959.624, 538.625)
+scale = Vector2(2.13654, 1.95796)
+texture = ExtResource("1_4hkl5")
+
+[node name="ифсл" type="Button" parent="."]
+offset_left = 1664.0
+offset_top = 985.0
+offset_right = 1867.0
+offset_bottom = 1051.0
+theme_override_font_sizes/font_size = 31
+text = "Назад"
+
+[connection signal="pressed" from="ифсл" to="." method="_on_ифсл_pressed"]
